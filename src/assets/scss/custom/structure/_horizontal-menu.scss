@@ -1,0 +1,98 @@
+// 
+// custom/horizontal-menu.scss
+// 
+
+.horizontal-menu {
+    .horizontal-menu-content {
+        padding: 14px 10px;
+        border-bottom: 1px solid lighten($gray-300, 3%);
+        height: 70px;
+        z-index: 1;
+        position: relative;
+    }
+    .navbar {
+        padding: 0rem 1rem;
+    }
+    .navbar-nav {
+        .nav-link {
+            color: $gray-600;
+            padding: 10px 18px;
+            transition: all 0.5s;
+            &:hover, &:active, &:focus, &.active {
+                color: $primary;
+            }
+        }
+    }
+    .menu-search-form {
+        .form-control {
+            padding-left: 30px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 7px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $gray-600;
+        }
+    }
+    .menu-dropdown {
+        .nav-link {
+            padding: 0;
+        }
+        .menu-user-img {
+            max-width: 40px;
+        }
+    }
+    .topbar-noti-icon {
+        &.noti-read {
+            position: relative;
+            &:after {
+                content: "";
+                background: $danger;
+                height: 10px;
+                width: 10px;
+                position: absolute;
+                border-radius: 50%;
+                right: 2px;
+                top: -4px;
+                border: 2px solid $white;
+            }
+        }
+        &.noti-unread {
+            position: relative;
+            &:after {
+                content: "";
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .horizontal-menu {
+        .navbar {
+            overflow-y: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 72px;
+            background-color: $white;
+            .dropdown-menu {
+                &.show {
+                    box-shadow: none;
+                }
+            }
+            .dropdown-icon {
+                float: right;
+            }
+        }
+        .container-fluid {
+            padding: 0 15px !important;
+        }
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .menu-user-name {
+        display: none;
+    }
+ }

@@ -1,0 +1,84 @@
+.tradio {
+
+  .blog {
+    border-bottom: 1px solid $border-color;
+    border-top   : 1px solid $border-color;
+
+    .dark & {
+      border-bottom: 1px solid transparent;
+      border-top: 1px solid transparent;
+    }
+  }
+
+  .blog-grid {
+    .card {
+      border       : 0px;
+      box-shadow   : 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+      margin-bottom: 30px;
+      background   : #fff;
+
+      .dark & {
+        background: $dark-dark;
+      }
+
+      img {
+        max-height: 185px;
+        width     : 100%;
+
+        @include respond("tab-land") {
+          max-height: 150px;
+        }
+
+        @include respond("tab-port") {
+          max-height: 100%;
+        }
+      }
+
+      .card-body {
+        padding: 20px !important;
+
+        .card-title {
+          font-size    : 20px;
+          margin-bottom: 15px;
+        }
+
+      }
+
+      .card-footer {
+        padding   : 10px 30px 30px;
+        background: #fff;
+        border    : 0px;
+
+        .dark & {
+          background: $dark-dark;
+        }
+
+        .meta-info {
+          display        : flex;
+          justify-content: space-between;
+
+          .author {
+            img {
+              max-width    : 30px;
+              border-radius: 50px;
+              margin-right : 7px;
+            }
+          }
+
+          a {
+            color    : $body-color;
+            font-size: 14px;
+
+            .dark & {
+              color: $body-color-dark;
+            }
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

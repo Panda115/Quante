@@ -1,0 +1,65 @@
+.tradio {
+  .bottom {
+    background: #fff;
+    .bottom-logo {
+      text-align: center;
+      p {
+        // color: #b2b6c4;
+        line-height: 30px;
+        font-weight: 400;
+      }
+
+      h2 {
+        color: rgb(16, 57, 238);
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 50%;
+      }
+    }
+    .bottom-widget {
+      @include respond("tab-port") {
+        margin-bottom: 30px;
+      }
+      .widget-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        margin-bottom: 20px;
+      }
+      ul {
+        li {
+          a {
+            // color: #b2b6c4;
+            color: $body-color;
+            font-weight: 400;
+            margin-bottom: 10px;
+            display: inline-block;
+
+            .dark & {
+              color: $body-color-dark;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-social {
+      text-align: right;
+
+      @include respond("phone") {
+        text-align: center;
+      }
+
+      li {
+        display: inline-block;
+
+        a {
+          color: #7f88a6;
+          padding: 0px 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+/*
+Template Name: Prompt Kit
+Author: CoderThemes
+Version: 1.0.0
+Website: https://coderthemes.com/
+Contact: support@coderthemes.com
+File: Main Css File
+*/
+
+// FONTS
+@import "custom/fonts";
+
+//CORE FILES
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "skins/default/variables";
+@import "skins/default/custom-variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// general
+@import "custom/general";
+
+// components
+@import "components/accordions";
+@import "components/alerts";
+@import "components/badge";
+@import "components/backgrounds";
+@import "components/breadcrumb";
+@import "components/buttons";
+@import "components/card";
+@import "components/dropdown";
+@import "components/forms";
+@import "components/modal";
+@import "components/navbar";
+@import "components/nav";
+@import "components/pagination";
+@import "components/popover";
+@import "components/progress";
+@import "components/reboot";
+@import "components/tables";
+@import "components/type";
+@import "components/helper";
+@import "components/list";
+@import "components/widgets";
+@import "components/custom-checkbox";
+@import "components/custom-radio";
+@import "components/print";
+@import "components/preloader";
+
+// custom plugins
+@import "custom/plugins/rateit";
+@import "custom/plugins/gallery";
+@import "custom/plugins/daterange";
+@import "custom/plugins/leaflet";
+@import "custom/plugins/jarallex";
+@import "custom/plugins/swiper";
+@import "custom/plugins/lightbox";
+@import "custom/plugins/aos";
+
+// structure
+@import "custom/structure/sidenav";
+@import "custom/structure/footer";
+
+// custom components
+@import "custom/components/icons";
+@import "custom/components/avatar";
+@import "custom/components/ribbon";
+
+// theme components
+@import "custom/components/header";
+@import "custom/components/hero";
+@import "custom/components/features";
+@import "custom/components/testimonials";
+
+// pages
+@import "custom/pages/docs";
+@import "custom/pages/portfolio";
+@import "custom/pages/gallery";

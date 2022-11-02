@@ -1,0 +1,52 @@
+// overriding popup
+.leaflet-container {
+    font-family: $font-family-base;
+    @include font-size($font-size-base);
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $body-color;
+
+    a.leaflet-popup-close-button {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 7px;
+    }
+}
+
+.custom-map-marker-popup {
+    .leaflet-popup-content-wrapper {
+        padding: 0px !important;
+
+        .leaflet-popup-content {
+            margin: 0px !important;
+
+            p {
+                margin: inherit;
+            }
+        }
+    }
+}
+
+// custom marker
+.custom-map-marker {
+    font-size: 0.75rem;
+    font-weight: $font-weight-semibold;
+    background-color: $white;
+    color: $body-color;
+    border-color: $white;
+    box-shadow: 0 1rem 3rem rgba($black, .275);
+
+    &:before {
+        box-shadow: 0 1rem 3rem rgba($black, .275);
+    }
+
+    &.active {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+
+        &:before {
+            border-top-color: $primary;
+        }
+    }
+}

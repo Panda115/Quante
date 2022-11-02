@@ -1,0 +1,45 @@
+.ribbon {
+    position: absolute;
+    padding-left: 0.5rem;
+    padding-right: 1.4rem;
+    clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 50%, 0 0);
+    top: 1rem;
+    left: 0px;
+    color: $white;
+    font-size: 0.8125rem;
+    line-height: 1.5rem;
+    font-weight: $font-weight-bold;
+    box-shadow: $box-shadow-lg;
+    border-bottom-right-radius: $border-radius-sm;
+    border-top-right-radius: $border-radius-sm;
+}
+
+@each $color,
+$value in $theme-colors {
+    .ribbon-#{$color} {
+        background: #{$value};
+
+        &:before {
+            border-color: darken($value, 5%);
+        }
+    }
+}
+
+.ribbon2 {
+    padding: 2px 60px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 16px;
+    right: -56px;
+}
+
+@each $color,
+$value in $theme-colors {
+    .ribbon2-#{$color} {
+        background: #{$value};
+
+        &:before {
+            border-color: darken($value, 5%);
+        }
+    }
+}

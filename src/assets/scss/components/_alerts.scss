@@ -1,0 +1,53 @@
+//
+// alerts
+// Bootstrap - extended default
+//
+
+.alert-dismissible {
+    padding-right: $alert-dismissible-padding-r;
+  
+    // Adjust close link position
+    // .btn-close {
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   z-index: $stretched-link-z-index + 1;
+    //   padding: $alert-padding-y $alert-padding-x;
+    // }
+  }
+
+  // @each $color, $value in $theme-colors {
+  //   .alert-#{$color} {
+  //     @include alert-variant(theme-color-level($value, $alert-bg-scale), theme-color-level($value, $alert-border-scale), color-yiq(theme-color-level($value, $alert-bg-scale)));
+  //     .close,
+  //     .alert-link {
+  //       color: color-yiq(theme-color-level($value, $alert-bg-scale));
+  //     }
+  //   }
+  // }
+
+  @each $color, $value in $theme-colors {
+    .alert-#{$color} {
+      color: $dark;
+      border-color: $value;
+      background-color: tint-color($value, 80%);
+    }
+  }
+  
+  
+  // scss-docs-start alert-modifiers
+  // Generate contextual modifier classes for colorizing the alert.
+  
+  // @each $state, $value in $theme-colors {
+  //   $alert-background: shift-color($value, $alert-bg-scale);
+  //   $alert-border: shift-color($value, $alert-border-scale);
+  //   $alert-color: shift-color($value, $alert-color-scale);
+  //   @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
+  //     $alert-color: mix($value, color-contrast($alert-background), abs($alert-color-scale));
+  //   }
+  //   .alert-#{$state} {
+  //     @include alert-variant($alert-background, $alert-border, $alert-color);
+  //   }
+  // }
+  // scss-docs-end alert-modifiers
+   

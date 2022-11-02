@@ -1,0 +1,40 @@
+// 
+// dropdown.scss
+//
+
+.dropdown {
+
+    .dropdown-menu {
+        font-size: $font-size-base;
+        z-index: $zindex-fixed;
+        box-shadow: $box-shadow-lg;
+        padding: $dropdown-padding-y $dropdown-padding-x;
+        top: 100%;
+
+        &.dropdown-menu-sm {
+            width: $dropdown-min-width-sm;
+        }
+
+        &.dropdown-menu-lg {
+            width: $dropdown-min-width-lg;
+        }
+
+        &.dropdown-menu-xl {
+            width: $dropdown-min-width-xl;
+        }
+        .dropdown-item {
+            border-radius: $dropdown-border-radius;
+        }
+    }
+
+    &.btn-group {
+        .btn {
+
+            &:hover,
+            &:active,
+            &:focus {
+                transform: translate3d(0, 0px, 0) !important;
+            }
+        }
+    }
+}

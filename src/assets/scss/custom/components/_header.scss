@@ -1,0 +1,173 @@
+.header-1 {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgba($primary, 0.07) 0%, rgba($primary, 0.05) 100%) no-repeat left center;
+        background-size: calc(1240px + (100vw - 1240px)/ 2) 100%;
+        transform: skewY(-6deg);
+        transform-origin: top left;
+    }
+
+    @media (max-width: 768px) {
+        &::before {
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.header-2 {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgb(255, 255, 255) 0%, rgba($warning, 0.05) 100%) no-repeat left center;
+        background-size: calc(1240px + (100vw - 1240px)/ 2) 100%;
+        transform: skewY(3deg);
+        transform-origin: top left;
+    }
+
+    &.primary {
+        padding-bottom: 5rem;
+        &::before {
+            top: -6rem;
+            background: linear-gradient($gray-100 0%, $gray-50 100%) no-repeat left center;
+            background-size: calc(1240px + (100vw - 1240px)/ 2) 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &::before {
+            background-size: 100% 100%;
+        }
+    }
+}
+
+
+.header-3 {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgba($primary, 0.07) 0%, rgba($primary, 0.05) 100%) no-repeat right center;
+        // background-size: calc(1240px + (100vw - 1240px)/ 2) 100%;
+    }
+
+    @media (max-width: 768px) {
+        &::before {
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.header-4 {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: calc(100% - 60px);
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgba($warning, 0.05) 0%, rgba($warning, 0.07) 100%) no-repeat left center;
+    }
+}
+
+.header-5 {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgba($orange, 0.05) 0%, rgba($orange, 0.07) 100%) no-repeat left center;
+    }
+
+    @media (max-width: 768px) {
+        &::before {
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.header-6 {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgba($orange, 0.075) 0%, rgba($warning, 0.1) 100%) no-repeat left center;
+    }
+}
+
+.header-7 {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        bottom: 0;
+        background: linear-gradient(rgba($gray-100, 0.25) 0%, rgba($gray-100, 0.4) 100%) no-repeat right center;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba($gray-900, 0.25);
+    }
+}

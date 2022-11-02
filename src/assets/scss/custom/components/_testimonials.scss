@@ -1,0 +1,133 @@
+// feature 1
+.testimonials-1 {
+
+    .slider {
+        position: relative;
+
+        &::before {
+            content: "";
+            background: url('/assets/images/pattern/dot3.svg');
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            bottom: -2.5rem;
+            left: -2.5rem;
+            z-index: 0;
+        }
+
+        &::after {
+            content: "";
+            background: url('/assets/images/pattern/dot3.svg');
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: -2.5rem;
+            right: -2.5rem;
+            z-index: 0;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-1 {
+        .slider {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// testimonials-2
+.testimonials-2,
+.testimonials-3 {
+    .slider {
+        position: relative;
+
+
+        .swiper-slide {
+            .img-author {
+                max-height: 300px;
+            }
+        }
+
+        &::before {
+            content: "";
+            background: url('/assets/images/pattern/dot5.svg');
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            bottom: -2.25rem;
+            left: -2.25rem;
+            z-index: 0;
+        }
+
+        &::after {
+            content: "";
+            background: url('/assets/images/pattern/dot5.svg');
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            top: -2.25rem;
+            right: -2.25rem;
+            z-index: 0;
+        }
+
+        .testimonial-body {
+            padding: 2rem;
+        }
+
+        .quotation-mark {
+            font-weight: 700;
+            font-size: 6rem;
+            font-family: "Times New Roman", Georgia, Serif;
+            line-height: 0.7;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .testimonials-2,
+    .testimonials-3 {
+        .slider {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.testimonials-3 {
+    .slider {
+        &::before,
+        &::after {
+            background: none;
+        }
+    }
+}
+
+
+
+// testimonials-4
+.testimonials-4 {
+    .client-img {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .quotation-mark {
+        font-weight: 700;
+        font-size: 8rem;
+        font-family: "Times New Roman", Georgia, Serif;
+        line-height: 0.7;
+    }
+    .navigations {
+        position: absolute;
+        right: 10px;
+        bottom: 25px;
+        z-index: 1;
+    }
+}

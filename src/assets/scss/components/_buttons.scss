@@ -1,0 +1,219 @@
+// 
+// buttons.scss
+//
+
+
+
+.btn {
+    .icon {
+        svg {
+            width: 1rem;
+            height: 1rem;
+            margin-left: 0.1rem;
+            margin-top: -2px;
+        }
+    }
+}
+
+.btn-rounded {
+    border-radius: 2.125rem;
+}
+
+.btn-rounded-circle {
+    border-radius: 50%;
+}
+
+
+// icon button
+.btn-icon {
+    padding: 0;
+    width: 2.625rem;
+    height: 2.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.btn-sm {
+        height: 1.75rem;
+        width: 1.75rem;
+    }
+
+    &.btn-lg {
+        height: 2.875rem;
+        width: 2.875rem;
+    }
+}
+
+
+//
+// Link buttons
+//
+// Make a button look and behave like a link
+.btn-link {
+    font-weight: $font-weight-normal;
+    color: $link-color;
+    background-color: transparent;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    &:focus,
+    &.focus {
+        text-decoration: $link-hover-decoration;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        color: $btn-link-disabled-color;
+        pointer-events: none;
+    }
+}
+
+
+// Override styles
+
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color} {
+
+        &:hover,
+        &:focus {
+            border-color: $value;
+            box-shadow: 0px 8px 20px -6px rgba($value, 0.6);
+            background: $value;
+        }
+    }
+
+    .btn-outline-#{$color} {
+        @include button-outline-variant($value);
+
+        &:hover,
+        &:focus {
+            box-shadow: 0px 8px 20px -6px rgba($value, 0.6);
+        }
+    }
+
+    .btn-soft-#{$color} {
+        background-color: rgba($value, 0.1);
+        color: $value;
+        border-color: transparent;
+
+        &:hover,
+        &:focus {
+            background-color: fade-in(rgba($value, 0.1), 0.05);
+            border-color: rgba($value, 0.1);
+            color: $value;
+            box-shadow: 0 1px 1px rgba($value, 0.1), 0 2px 4px 1px rgba($value, 0.1);
+        }
+    }
+}
+
+//
+// light button
+// 
+.btn-white {
+    border-color: $gray-300;
+    transition: $btn-transition;
+    border-radius: $btn-border-radius;
+
+    &:hover,
+    &:focus {
+        color: $dark !important;
+        background-color: $white !important;
+        box-shadow: 0 1px 3px rgba(60, 72, 88, 0.15), 0 2px 4px 2px rgba(60, 72, 88, 0.18);
+    }
+}
+
+// 
+// back to top
+//
+.btn-back-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+    z-index: 10;
+
+    &.show {
+        display: flex;
+    }
+}
+
+//
+// play button
+//
+.btn-play {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: radial-gradient(rgba($success, 1) 98%, white 100%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: $box-shadow-lg;
+
+    @each $color,
+    $value in $theme-colors {
+        &.#{$color} {
+            background: radial-gradient(rgba($value, 1) 98%, white 100%);
+        }
+    }
+
+    /* triangle */
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-40%) translateY(-50%);
+        transform-origin: center center;
+        width: 0;
+        height: 0;
+        border-top: 0.5rem solid transparent;
+        border-bottom: 0.5rem solid transparent;
+        border-left: 0.75rem solid #fff;
+        z-index: 100;
+        transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    /* pulse wave */
+    &::before {
+        content: "";
+        position: absolute;
+        width: 130%;
+        height: 130%;
+        opacity: 1;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.75);
+        top: -15%;
+        left: -15%;
+        background: rgba(198, 16, 0, 0);
+        animation-delay: 0s;
+        animation: pulsate1 2s;
+        animation-direction: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps;
+    }
+
+
+    @keyframes pulsate1 {
+        0% {
+            -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+            opacity: 1;
+            box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+        }
+
+        100% {
+            -webkit-transform: scale(1, 1);
+            transform: scale(1);
+            opacity: 0;
+            box-shadow: none;
+
+        }
+    }
+}

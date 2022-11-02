@@ -1,0 +1,191 @@
+import React, { Component } from "react";
+import { Navbar, Nav, Dropdown, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { ThemeConsumer } from "../context/ThemeContext";
+import QuantexLogo from "../assets/images/quantex-logo.svg";
+
+export default class Header extends Component {
+  componentDidMount() {
+    let el = document.querySelector("#darkTheme");
+    if (el) {
+      el.addEventListener("click", function () {
+        document.body.classList.toggle("dark");
+      });
+    }
+  }
+
+  render() {
+    return (
+      <>
+        <header className="light-bb">
+          <Navbar expand="lg">
+            <Link className="navbar-brand" to="/">
+              <img src={QuantexLogo} alt="Quantex Logo" />
+            </Link>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="navbar-nav mr-auto">
+                <Link to="/markets" className="nav-link">
+                  Markets
+                </Link>
+                <a href="https://trade.myquantex.com" className="nav-link">
+                  Trade
+                </a>
+                <Link to="/swap/BTC/ETH/0.01" className="nav-link">
+                  Swap
+                </Link>
+                <Link to="/help" className="nav-link">
+                  Support
+                </Link>
+              </Nav>
+              <Nav className="navbar-nav ml-auto">
+                <Dropdown className="header-custom-icon">
+                  <ThemeConsumer>
+                    {({ data, update }) => (
+                      <Button variant="default" onClick={update} id="darkTheme">
+                        {data.theme === "light" ? (
+                          <i className="fa fa-moon-o"></i>
+                        ) : (
+                          <i className="fa fa-sun-o"></i>
+                        )}
+                      </Button>
+                    )}
+                  </ThemeConsumer>
+                  <Dropdown.Toggle variant="default">
+                    <i className="icon ion-md-notifications"></i>
+                    <span className="circle-pulse"></span>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <div className="dropdown-header d-flex align-items-center justify-content-between">
+                      <p className="mb-0 font-weight-medium">
+                        6 New Notifications
+                      </p>
+                      <a href="#!" className="text-muted">
+                        Clear all
+                      </a>
+                    </div>
+                    <div className="dropdown-body">
+                      <a href="#!" className="dropdown-item">
+                        <div className="icon">
+                          <i className="icon ion-md-lock"></i>
+                        </div>
+                        <div className="content">
+                          <p>Account password change</p>
+                          <p className="sub-text text-muted">5 sec ago</p>
+                        </div>
+                      </a>
+                      <a href="#!" className="dropdown-item">
+                        <div className="icon">
+                          <i className="icon ion-md-alert"></i>
+                        </div>
+                        <div className="content">
+                          <p>Solve the security issue</p>
+                          <p className="sub-text text-muted">10 min ago</p>
+                        </div>
+                      </a>
+                      <a href="#!" className="dropdown-item">
+                        <div className="icon">
+                          <i className="icon ion-logo-android"></i>
+                        </div>
+                        <div className="content">
+                          <p>Download android app</p>
+                          <p className="sub-text text-muted">1 hrs ago</p>
+                        </div>
+                      </a>
+                      <a href="#!" className="dropdown-item">
+                        <div className="icon">
+                          <i className="icon ion-logo-bitcoin"></i>
+                        </div>
+                        <div className="content">
+                          <p>Bitcoin price is high now</p>
+                          <p className="sub-text text-muted">2 hrs ago</p>
+                        </div>
+                      </a>
+                      <a href="#!" className="dropdown-item">
+                        <div className="icon">
+                          <i className="icon ion-logo-usd"></i>
+                        </div>
+                        <div className="content">
+                          <p>Payment completed</p>
+                          <p className="sub-text text-muted">4 hrs ago</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div className="dropdown-footer d-flex align-items-center justify-content-center">
+                      <a href="#!">View all</a>
+                    </div>
+                  </Dropdown.Menu>
+                </Dropdown>
+
+                <Dropdown className="header-img-icon">
+                  <Dropdown.Toggle variant="default">
+                    <img src={"img/avatar.svg"} alt="avatar" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <div className="dropdown-header d-flex flex-column align-items-center">
+                      <div className="figure mb-3">
+                        <img src={"img/avatar.svg"} alt="" />
+                      </div>
+                      <div className="info text-center">
+                        <p className="name font-weight-bold mb-0">Tony Stark</p>
+                        <p className="email text-muted mb-3">
+                          tonystark@gmail.com
+                        </p>
+                      </div>
+                    </div>
+                    <div className="dropdown-body">
+                      <ul className="profile-nav">
+                        <li className="nav-item">
+                          <Link to="/profile" className="nav-link">
+                            <i className="mdi mdi-account"></i>
+                            <span>Profile</span>
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/settings" className="nav-link">
+                            <i className="mdi mdi-settings"></i>
+                            <span>Settings</span>
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/authentication" className="nav-link">
+                            <i className="mdi mdi-lock"></i>
+                            <span>Authentication</span>
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/referral" className="nav-link">
+                            <i className="mdi mdi-diamond"></i>
+                            <span>Referral</span>
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/verification" className="nav-link">
+                            <i className="mdi mdi-verified"></i>
+                            <span>Verification</span>
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/api" className="nav-link">
+                            <i className="mdi mdi-database"></i>
+                            <span>API</span>
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/" className="nav-link red">
+                            <i className="mdi mdi-power"></i>
+                            <span>Log Out</span>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </header>
+      </>
+    );
+  }
+}

@@ -1,0 +1,120 @@
+@import './base/base';
+@import './layout/layout';
+@import './module/module';
+@import './theme/theme';
+@import './tradio/main.scss';
+
+.markets{
+    .container-fluid{
+        .markets-pair-list{
+            .tab-content{
+                .table{
+                    tbody{
+                        td{
+                            i:hover{
+                                color: #007bff;
+                            }
+                            i.active{
+                                color: #007bff;
+                            }
+                            i.active:hover{
+                                color: #75869696;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
+header{
+    nav.navbar{
+        padding:8px 1rem 2px 1rem;
+        #basic-navbar-nav{
+            justify-content: space-between;
+            a.nav-link{
+                font-weight: 400;
+                font-size: 0.9065rem;
+            }
+        }
+    }
+}
+.landing header{
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    background: #fff;
+    #darkTheme{
+        //display: none;
+    }
+}
+.dark .landing header{
+    background: #05080d;
+}
+.mr-3, .mx-3 {
+    margin-right: 1rem!important;
+}
+.contact-body{
+    .card-flex{
+        & .col-lg-4{
+            display: flex;
+        }
+        .card{
+            flex: 1;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-color: #dadde7;
+            border-width: 1px;
+            //height: 100%;
+            .header{
+                font-size: 1rem;
+                font-weight: 500;
+                justify-content:space-between;
+                display:flex;
+            }
+            span.body{
+                margin-top: 0.3rem;
+                font-size: 0.65rem;
+                font-weight: 500;
+                color: #8c909d;
+            }
+            &.active{
+                .header{
+                    color: #090b0c;
+                }
+                border-color: #0180ff;
+                background-color: #0180ff0f!important;
+                background:unset;
+            }
+        }
+    }
+    .request{
+        .header{
+            font-size: 1.5rem;
+        }
+        .desc{
+            font-size: 0.6rem;
+            margin: 12px 0px 2px 0px;
+        }
+        .body{
+            width: 60%;
+            select{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.heading-link{
+    cursor:pointer;
+    color: #48465b;
+}
+.heading-link:hover{
+    color: #0180ff;
+    text-decoration: underline;
+}
+/*
+[data-aos^=fade][data-aos^=fade] {
+    opacity: 1;
+}
+*/

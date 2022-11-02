@@ -1,0 +1,135 @@
+.swap {
+  .card {
+    box-shadow: rgba(0, 0, 0, .2) 0px 2px 14px -6px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+  }
+
+  input, select {
+    border: 1px solid #e0e3eb;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 45px;
+  }
+  
+  .send-border {
+    border: 1px solid #2a2e39 !important;
+  }
+
+  .swap-choose {
+    .btn.focus, .btn:focus {
+      box-shadow: none;
+    }
+
+    .btn.focus, .btn:focus, .btn:hover {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+
+  .swap-send, .swap-receive {
+    h4 {
+      font-size: 18px;
+      // padding-top: 30px;
+    }
+  }
+
+  .btn-rate-group {
+    padding: 4px;
+    background-color: #e0e9eb;
+    border-radius: 9px;
+  }
+
+  .btn-rate {
+    color: #3f95a9;
+    background-color: #e0e9eb;
+    font-weight: bold;
+    border-color: transparent;
+
+    &:active, &.active {
+      color: black;
+      background-color: #ffffff;
+    }
+  }
+
+  .swap_progressbar_botton {
+    margin-bottom: 0;
+    counter-reset: step;
+
+    li {
+      list-style-type: none;
+      color: #787070;
+      font-size: 16px;
+      font-weight: bold;
+      width: 25%;
+      float: left;
+      text-align: center;
+      position: relative;
+      
+      &:not(.active) {
+        margin-top: 20px;
+      }
+
+      &.active {
+        color: #8dcaff;
+      }
+
+      &:before {
+        content: counter(step);
+        width: 23px;
+        line-height: 22px;
+        display: block;
+        font-size: 0px;
+        color: #333;
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 100%;
+        margin: 0 auto 5px auto;
+      }
+
+      &.active:before {
+        height: 46px !important;
+        width: 47px !important;
+        background-image: url('../../images/editor.gif');
+        border: none;
+        top: -7px;
+        left: -10px;
+      }
+    }
+    margin: 0 0 20px;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.swap-nav {
+  box-shadow: rgba(0, 0, 0, .2) 0px 2px 14px -6px;
+  border-radius: 5px;
+
+  .nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    border-radius: 0;
+    text-transform: uppercase;
+    color: #18214d;
+    font-weight: 600;
+    margin: 2px 0;
+    padding: 10px 20px;
+
+    &:first-child {
+      border-top: 0;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+}

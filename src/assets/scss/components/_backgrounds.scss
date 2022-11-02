@@ -1,0 +1,139 @@
+// 
+// backgrounds.scss
+//
+
+
+// soft
+@each $color,
+$value in $theme-colors {
+    .bg-soft-#{$color} {
+        background-color: rgba(($value), 0.12) !important;
+    }
+}
+
+
+// gray
+@each $color,
+$value in $grays {
+    .bg-gray-#{$color} {
+        background-color: $value !important;
+    }
+}
+
+// shapes
+.shape {
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+
+    &.left {
+        top: 0;
+        bottom: 0;
+        left: -1px;
+    }
+
+    &.right {
+        top: 0;
+        right: -1px;
+        bottom: 0;
+    }
+
+    &.bottom {
+        bottom: -2px;
+        left: 0;
+        right: 0;
+
+        >svg {
+            width: 100%;
+        }
+    }
+
+    &.top {
+        top: -2px;
+        left: 0;
+        right: 0;
+
+        >svg {
+            width: 100%;
+        }
+    }
+
+    >svg {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .shape {
+        &.bottom {
+            bottom: -5px;
+        }
+    }
+}
+
+// divider
+.divider {
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+
+    &.top {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 120' preserveAspectRatio='none'%3E%3Cg class='n2-ss-divider-end'%3E%3Cpath fill='RGBA(255,255,255,1)' opacity='0.25' d='M1920,0,0,120,0,0z'%3E%3C/path%3E%3Cpath fill='RGBA(255,255,255,1)' opacity='0.5' d='M1920,0,0,80,0,0z'%3E%3C/path%3E%3Cpath fill='RGBA(255,255,255,1)' d='M1920,-2,1920,0,0,40,0,-2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+        top: 0px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 120px;
+        transform: scaleX(-1);
+    }
+
+    &.bottom {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 120' preserveAspectRatio='none'%3E%3Cg class='n2-ss-divider-end'%3E%3Cpath fill='RGBA(255,255,255,1)' opacity='0.25' d='M1920,0,0,120,0,0z'%3E%3C/path%3E%3Cpath fill='RGBA(255,255,255,1)' opacity='0.5' d='M1920,0,0,80,0,0z'%3E%3C/path%3E%3Cpath fill='RGBA(255,255,255,1)' d='M1920,-2,1920,0,0,40,0,-2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 120px;
+        transform: scaleX(1) scaleY(-1);
+    }
+}
+
+
+// animation - TODO
+.animate {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
+}
+
+.animate:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+// gradients
+.bg-gradient {
+    background: linear-gradient(180deg, rgba($primary, 0.05) 0%, rgba($primary, 0.02) 100%);
+}
+
+.bg-gradient2 {
+    background: linear-gradient($gray-200 0%, $gray-100 100%) no-repeat left center;
+}
+
+.bg-gradient3 {
+    background: linear-gradient(#f4f5f7 0,#fafafb 100%);
+}
+
+.bg-gradient4 {
+    background: linear-gradient(rgba($orange, 0.075) 0%, rgba($warning, 0.1) 100%) no-repeat left center;
+}
+
+.bg-gradient5 {
+    background: linear-gradient(rgba($orange, 0.05) 0%, rgba($orange, 0.07) 100%) no-repeat left center;
+}
+
+.bg-gradient6 {
+    background: linear-gradient(rgba($primary, 0.12) 0%, rgba($primary, 0.02) 100%) no-repeat top center;
+}

@@ -1,0 +1,267 @@
+.tradio {
+  .section-padding {
+    padding: 50px 0px;
+
+    @include respond("tab-land") {
+      padding: 70px 0px;
+    }
+  }
+
+  .section-title {
+    // margin-bottom: 75px;
+
+    h2 {
+      // text-align : center;
+      font-weight: 500;
+    }
+  }
+
+  .getstart-content {
+    text-align: center;
+
+    i {
+      font-size: 48px;
+      color: $primary;
+    }
+
+    h3 {
+      margin-top: 15px;
+      font-size: 20px;
+    }
+  }
+
+  // Promo
+  .promo {
+    // background-color: #fff;
+    border-bottom: 1px solid $border-color;
+
+    .dark & {
+      border-bottom: 1px solid transparent;
+    }
+
+    .promo-content {
+      text-align: center;
+
+      .promo-content-img {
+        background: $primary;
+        height: 150px;
+        width: 150px;
+        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+
+        // box-shadow: rgba(218, 225, 233, 0.557) 0px 8px 16px;
+        img {
+          max-width: 70px;
+        }
+      }
+
+      h3 {
+        margin-bottom: 15px;
+      }
+
+      p {
+        line-height: 30px;
+      }
+    }
+  }
+
+  // Portfolio
+  .portfolio_list {
+    // max-width: 500px;
+    .media {
+      margin-bottom: 10px;
+      border: 1px solid lightgray;
+      border-radius: 20px;
+      width: 100%;
+      padding: 10px;
+      min-height: 105px;
+      overflow: hidden;
+
+      h4 {
+        font-size: 22px;
+      }
+
+      p {
+        margin-bottom: 0px;
+        font-size: 13px;
+
+        a {
+          color: $primary;
+        }
+      }
+    }
+    .media:hover {
+      background-color: lightgray;
+    }
+  }
+
+  .portfolio_img {
+    img {
+      border-radius: 5px;
+      // box-shadow   : 25px 60px 125px -25px rgba(0, 0, 0, .2), 16px 40px 75px -40px rgba(0, 0, 0, .2);
+    }
+  }
+
+  // Trade app
+  .trade-app-content {
+    border: 0px;
+    background: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1);
+
+    .card-body {
+      padding: 20px 30px;
+
+      span {
+        font-size: 48px;
+        margin-bottom: 15px;
+        display: inline-block;
+        color: $primary;
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        min-height: 115px;
+
+        @include respond("tab-land") {
+          min-height: 165px;
+        }
+
+        @include respond("tab-port") {
+          min-height: auto;
+        }
+      }
+
+      a {
+        color: $primary;
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+
+        i {
+          margin-left: 15px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .trusted-logo {
+    text-align: center;
+    margin-bottom: 30px;
+
+    a {
+      display: inline-block;
+
+      img {
+        filter: brightness(0);
+
+        .dark & {
+          filter: brightness(100);
+        }
+      }
+    }
+  }
+
+  // Get in touch
+  .get-touch {
+    border-bottom: 1px solid $border-color;
+
+    .dark & {
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  .get-touch-content {
+    // text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+    background: #fff;
+    border-radius: 5px;
+
+    .dark & {
+      background: $dark-dark;
+    }
+
+    span {
+      margin-right: 15px;
+
+      i {
+        color: $primary;
+        font-size: 42px;
+      }
+    }
+
+    h4 {
+      font-size: 20px;
+      // margin-top: 30px;
+      margin-bottom: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    p {
+      line-height: 27px;
+    }
+  }
+}
+
+.available-item {
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  color: rgb(50, 81, 223);
+  border: 1px solid rgb(50, 81, 223);
+  border-radius: 10px;
+
+  i {
+    font-size: 30px;
+  }
+
+  h6 {
+    color: rgb(50, 81, 223);
+    font-size: 12px;
+  }
+}
+
+.available-item:hover {
+  background-color: rgb(50, 81, 223);
+  color: white;
+  h6 {
+    color: white;
+  }
+}
+
+.refers {
+  h2 {
+    color: white;
+    margin-bottom: 20px;
+  }
+}
+
+.particlearea {
+  position: relative;
+}
+
+.particlebackground canvas {
+  position: absolute;
+}
+
+.parallax {
+  background-image: url("../../../images/refer_back.png");
+  min-height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

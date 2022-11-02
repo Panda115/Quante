@@ -1,0 +1,85 @@
+//
+// forms.scss
+//
+
+// Form-control light
+.form-control-light {
+    background-color: $gray-100;
+    border-color: $gray-100;
+}
+
+
+// Form elements (Color and Range)
+input.form-control[type="color"],
+input.form-control[type="range"] {
+    min-height: 39px;
+}
+
+
+// Custom select
+.custom-select.is-invalid, .form-control.is-invalid,.custom-select:invalid, .form-control:invalid,
+.custom-select.is-valid, .form-control.is-valid, .custom-select:valid,.form-control:valid {
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+// Comment box
+.comment-area-box {
+    .form-control {
+        border-color: $gray-300;
+        border-radius: $input-border-radius $input-border-radius 0 0;
+    }
+    .comment-area-btn {
+        background-color: $gray-100;
+        padding: 10px;
+        border: 1px solid $gray-300;
+        border-top: none;
+        border-radius: 0 0 $input-border-radius $input-border-radius;
+    }
+}
+
+// Input
+input {
+    &:focus {
+        outline: none;
+    }
+}
+
+// Custom - form-group-hint
+.form-control-with-hint {
+    position: relative;
+    .form-control {
+        padding-right: 50px !important;
+    }
+    .form-control-feedback {
+        position: absolute;
+        top:  $input-border-width + 1;
+        bottom:  $input-border-width + 1;
+        right: $input-padding-x * 0.75;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        font-size: 0.75rem;
+        font-weight: $font-weight-semibold;
+        color: lighten($input-color, 15%);
+    }
+} 
+
+// .form-label {
+//     font-weight: $font-weight-medium !important;
+// }
+
+.form-check {
+    .form-check-input:checked ~ .form-label {
+      &::after {
+        background-image: none;
+        font-family: "unicons";
+        content: '\e8d9';
+        font-size: 1.25rem;
+        top: -0.185rem;
+        left: -1.7rem;
+        color: #ffffff;
+      }
+    }
+}

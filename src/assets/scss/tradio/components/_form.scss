@@ -1,0 +1,91 @@
+.tradio {
+  
+  .form-group {
+    // margin-bottom: 30px;
+    position        : relative;
+  
+    label {
+        font-size    : 14px;
+        font-weight  : 500;
+        color        : $body-color;
+        margin-bottom: 10px;
+        background   : transparent;
+        border-color : $border-color;
+  
+        .dark & {
+            color: $body-color-dark;
+            border-color: $border-color-dark;
+        }
+    }
+  }
+  
+  .form-control {
+    border-radius: 4px;
+    // height    : 50px;
+    border       : 1px solid $border-color;
+    padding      : 0px 15px;
+    font-size    : 16px;
+    font-weight  : 400;
+    color        : $body-color;
+    transition   : all 0.3s ease-in-out;
+    background   : $body-bg;
+  
+    .dark & {
+      color: $body-color-dark;
+      border: 1px solid transparent;
+      background: $body-bg-dark;
+    }
+  
+    .select {
+      padding: 12px 0;
+    }
+  
+    span {
+      margin-top: 0;
+    }
+  
+    &::-webkit-input-placeholder {
+      color: $body-color;
+    }
+  
+    &:-ms-input-placeholder {
+      color: $body-color;
+    }
+  
+    &::placeholder {
+      color: $body-color;
+    }
+  
+    &:hover {
+      box-shadow  : none !important;
+      outline     : none;
+      border-color: $border-color;
+      color       : $body-color;
+      background  : $body-bg;
+    }
+    .dark &:hover {
+      border-color: $border-color-dark;
+      color: $body-color-dark;
+      background: $body-bg-dark;
+    }
+  
+    &:focus,
+    &:active,
+    &.active {
+      box-shadow  : none !important;
+      outline     : none;
+      border-color: $primary;
+      color       : $body-color;
+      background  : $body-bg;
+    }
+  
+    .dark &:focus,
+    .dark &:active,
+    .dark &.active {
+      border-color: $primary;
+      color       : $body-color-dark;
+      background  : $body-bg-dark;
+    }
+  }
+  
+}

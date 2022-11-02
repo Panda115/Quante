@@ -1,0 +1,54 @@
+// Footer
+.footer {
+    .cta-content {
+        position: relative;
+        top: -90px;
+    }
+    .footer-content {
+        position: relative;
+        z-index: 1;
+    }
+    .footer-social-icon {
+        .footer-icon-bg {
+            background: rgba($white, 0.08);
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: all 0.5s;
+            .footer-icon {
+                height: 18px;
+                width: 18px;
+                strokewidth: 1.5px;
+                color: $white;
+            }
+            &:hover {
+                background: rgba($white, 0.3);
+                box-shadow: 0 0 0 5px rgba($white, 0.1);
+            }
+        }
+    }
+    .footer-submenu {
+        li {
+            margin: 14px 0;
+            .footer-item {
+                color: lighten($gray-600, 12%);
+                font-size: 14px;
+                transition: all 0.3s ease 0s;
+                &:hover {
+                    color: $primary;
+                    padding-left: 6px;
+                }
+            }
+        }
+    }
+    .footer-bg-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.03;
+    }
+}

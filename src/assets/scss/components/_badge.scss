@@ -1,0 +1,38 @@
+// 
+// badge.scss
+//
+.badge-soft {
+    color: $gray-800;
+}
+
+// badge soft
+
+@mixin badge-soft-variant($bg) {
+    background-color: rgba($bg, 0.12);
+    color: $bg !important;
+}
+
+@each $color, $value in $theme-colors {
+    .badge-soft-#{$color} {
+      @include badge-soft-variant($value);
+    }
+}
+
+
+// Basic Badge
+.badge {
+    &.badge-light {
+        color: $gray-800;
+    }
+    &.badge-pill {
+        border-radius: 50px !important;
+    }
+    &.badge-md {
+        padding: 4px 16px;
+        font-size: 16px;
+    }
+    &.badge-lg {
+        padding: 7px 20px;
+        font-size: 17px;
+    }
+}

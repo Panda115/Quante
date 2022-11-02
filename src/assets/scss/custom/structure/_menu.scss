@@ -1,0 +1,281 @@
+//
+// menu.scss
+//
+
+
+
+/**
+.topnav {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.3s;
+    .tagline {
+        padding: 8px 0;
+        background: lighten($gray-200, 1%);
+        .tagline-list {
+            li {
+                margin-right: 18px;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+                a {
+                    color: rgba($gray-700, 0.8);
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    .navbar-nav {
+        .nav-link {
+            position: relative;
+            padding: 0.8rem 1.1rem;
+        }
+        .nav-item {
+            .nav-link {
+                color: $gray-700;
+            }
+            &.active, &:hover {
+                .nav-link {
+                    color: $primary;
+                }
+            }
+            .dropdown-item.active{
+                color: $primary;
+            }
+        }
+        
+    }
+}
+
+
+.arrow-down {
+    display: inline-block;
+
+    &:after {
+        border-color: initial;
+        border-style: solid;
+        border-width: 0 0 1px 1px;
+        content: "";
+        height: .4em;
+        display: inline-block;
+        right: 5px;
+        top: 50%;
+        margin-left: 10px;
+        transform: rotate(-45deg) translateY(-50%);
+        transform-origin: top;
+        transition: all .3s ease-out;
+        width: .4em;
+    }
+}
+
+// // Navbar Light
+// .navbar-light {
+//     .nav-item {
+//         .nav-link {
+//             color: rgba($white, 0.7) !important;
+//         }
+//         &.active, &:hover {
+//             .nav-link {
+//                 color: $primary !important;
+//             }
+//         }
+//     }
+// }
+
+// Topnav Menu
+.topnav-menu {
+    background: $white;
+    top: 20px;
+}
+
+@include media-breakpoint-up(xl) {
+    .topnav {
+        .dropdown {
+            .dropdown-menu  {
+                margin-top: 0;
+                min-width: $dropdown-min-width * 1.25;
+
+                .arrow-down {
+                    &::after {
+                        right: 15px;
+                        transform: rotate(-135deg) translateY(-50%);
+                        position: absolute;
+                    }
+                }
+
+                .dropdown  {
+                    .dropdown-menu  {
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        display: none
+                    }
+                }
+            }
+        }
+
+        .dropdown-item {
+            transition: all 0.3s ease 0s;
+            &:hover {
+                padding-left: $dropdown-item-padding-x * 1.25;
+                color: $primary;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    
+    .topnav {
+        background-color: $white;
+        
+        .navbar-nav {
+            .nav-link {
+                padding: 0.75rem 1.3rem;
+            }
+        }
+        .dropdown {
+            .dropdown-menu  {
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                padding-left: 10px;
+            }
+            .dropdown-item {
+                position: relative;
+                color: rgba($white, 0.5);
+                background-color: transparent;
+
+                &.active, &:active {
+                    color: $white;
+                }
+            }
+        }
+        .arrow-down {
+            &::after {
+                right: 15px;
+                position: absolute;
+            }
+        }
+    }
+}
+
+
+.navbar-toggler {
+    position: relative;
+    cursor: pointer;
+    float: left;
+    margin: 15px 0px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    .lines {
+        width: 25px;
+        display: block;
+        position: relative;
+        height: 16px;
+        transition: all .5s ease;
+    }
+    span {
+        height: 2px;
+        width: 100%;
+        background-color: rgba($dark, 0.8);
+        display: block;
+        margin-bottom: 5px;
+        transition: transform .5s ease;
+    }
+    &.open {
+        span {
+            position: absolute;
+            &:first-child {
+                top: 7px;
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                visibility: hidden;
+            }
+            &:last-child {
+                width: 100%;
+                top: 7px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    box-shadow: $box-shadow-sm;
+}
+
+
+// Dropdown Hover
+
+@include media-breakpoint-up(xl) {
+    .dropdown-hover {
+        &:hover {
+            > .dropdown-menu {
+                display: block;
+
+                .dropdown {
+                    &:hover {
+                        > .dropdown-menu {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Dropdown Sizes
+
+.dropdown-menu-xl {
+    width: 42rem;
+    .dropdown-item {
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 991.98px) { 
+    .topnav {
+        position: fixed;
+        top: 0;
+        box-shadow: $box-shadow;
+        .tagline {
+            display: none;
+        }
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    color: $gray-700 !important;
+                    padding: .75rem 0;
+                }
+            }
+        }
+        .dropdown {
+            .dropdown-item {
+                color: $gray-700;
+            }
+        }
+        .navbar {
+            .navbar-collapse {
+                max-height: 375px;
+                overflow-y: auto
+            }
+        }
+        .topnav-menu {
+            top: 0px;
+        }
+    }
+ }
+
+ */

@@ -1,0 +1,204 @@
+// 
+// card.scss
+//
+
+.card {
+    margin-bottom: $grid-gutter-width;
+    position: relative;
+    box-shadow: $box-shadow-sm;
+
+    &.hoverable {
+        transition: $transition-base;
+
+        &:hover {
+            box-shadow: 0rem 0rem 1.5rem 0px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px) !important;
+        }
+    }
+
+    .card-img-overlay {
+        .overlay-light-top {
+            padding: $card-img-overlay-padding $card-img-overlay-padding $card-img-overlay-padding * 1.5 $card-img-overlay-padding;
+            background: linear-gradient(180deg, $white 0%, rgba($white, 0.95) 50%, rgba($white, 0.90) 75%, transparent 100%);
+        }
+
+        .overlay-light-bottom {
+            position: absolute;
+            bottom: 0;
+            padding: $card-img-overlay-padding * 1.5 $card-img-overlay-padding $card-img-overlay-padding $card-img-overlay-padding;
+            background: linear-gradient(0deg, rgba($white, 0.95) 0%, rgba($white, 0.90) 50%, rgba($white, 0.85) 85%, transparent 100%);
+        }
+    }
+}
+
+.card-footer {
+    border-color: lighten($gray-200, 1%);
+}
+
+.card-drop {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 30px;
+    color: inherit;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: -6px;
+
+    &:hover {
+        background-color: $gray-200;
+        color: $dark;
+    }
+}
+
+
+// Card title / Card Header
+.card-title,
+.card-header {
+    margin-top: 0;
+}
+
+.card-nav {
+    margin: -0.5rem 0;
+}
+
+// Custom card box
+.card-box {
+    background-color: $card-bg;
+    padding: $card-spacer-x;
+    margin-bottom: $grid-gutter-width;
+    @include border-radius($card-border-radius);
+}
+
+
+// custom positioning in card overlay
+.card-img-top-overlay {
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba($gray-600, 0.4);
+    }
+
+    .overlay-light {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba($gray-200, 0.5);
+    }
+
+    .overlay-dark {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba($gray-900, 0.5);
+    }
+
+    .card-overlay-top {
+        position: absolute;
+        top: .75rem;
+        right: 1.25rem;
+        left: 1.25rem;
+    }
+
+    .card-overlay-bottom {
+        position: absolute;
+        right: 1.25rem;
+        bottom: .75rem;
+        left: 1.25rem;
+    }
+
+    .card-badge {
+        position: absolute;
+        font-size: 0.8125rem;
+        line-height: 1.5rem;
+        font-weight: $font-weight-bold;
+        box-shadow: $box-shadow-lg;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        border-radius: $border-radius-sm;
+        z-index: 1000;
+
+        &.top-left {
+            top: 1rem;
+            left: 1rem;
+        }
+
+        &.bottom-left {
+            bottom: 1rem;
+            left: 1rem;
+        }
+
+        &.top-right {
+            top: 1rem;
+            right: 1rem;
+        }
+
+        &.bottom-right {
+            bottom: 1rem;
+            right: 1rem;
+        }
+    }
+}
+
+.card-portfolio-item {
+    .card-zoom {
+        overflow: hidden!important;
+        border-radius: inherit;
+
+        img {
+            transition: $transition-base;
+            transform-origin: center center;
+            border-radius: inherit;
+        }
+    }
+    
+
+    &:hover {
+        .card-zoom {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }   
+}
+
+.card-listing-item {
+    overflow: hidden !important;
+    border: $border-width solid $border-color !important;
+
+    &.overlay {
+        .overlay-details {
+            position: absolute;
+            opacity: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            backdrop-filter: blur(5px);
+            background: rgba($black, 0.25);
+            transform: translateY(10%);
+            transition: $transition-base;
+        }
+
+        &:hover {
+            .overlay-details {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+}
+
+.sticky-el {
+    position: sticky;
+    top: 50px;
+}

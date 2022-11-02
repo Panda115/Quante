@@ -1,0 +1,27 @@
+// 
+// pagination.scss
+//
+
+
+.page-item {
+  &:first-child {
+    .page-link {
+      border-top-left-radius: $border-radius-sm;
+      border-bottom-left-radius: $border-radius-sm;
+    }
+  }
+  &:last-child {
+    .page-link {
+      border-top-right-radius: $border-radius-sm;
+      border-bottom-right-radius: $border-radius-sm;
+    }
+  }
+}
+
+// Pagination rounded (Custom)
+.pagination-rounded {
+  .page-link {
+    border-radius: 100% !important;
+    margin: 0 3px;
+  }
+}

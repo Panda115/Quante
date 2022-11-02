@@ -1,0 +1,39 @@
+.code-block {
+    position: relative;
+    border: $border-width solid $border-color !important;
+    padding: $kbd-padding-y $kbd-padding-x;
+    background: $white;
+    border-radius: $border-radius-sm;
+    margin-bottom: 1rem;
+
+    h6 {
+        margin-top: 0px;
+    }
+
+    .prettyprint {
+        background: $gray-100;
+        border: none;
+        padding: $kbd-padding-y $kbd-padding-x;
+        margin-bottom: 0px;
+    }
+
+    .btn-copy-clipboard {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.doc-carousel {
+    .carousel-item {
+        height: 400px;
+    }
+
+    .carousel-item img {
+        height: 400px;
+        position: absolute;
+        object-fit:cover;
+        top: 0;
+        left: 0;
+    }
+}

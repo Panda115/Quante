@@ -1,0 +1,12 @@
+// 
+// popover.scss
+//
+
+.popover {
+    box-shadow: $box-shadow-lg;
+
+    .popover-header {
+        margin-top: 0;
+        font-size: $font-size-sm;
+    }
+}

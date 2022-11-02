@@ -1,0 +1,785 @@
+
+// title
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.3;
+    font-weight: $font-weight-semibold;
+
+    @media (max-width: 768px) {
+        font-size: 2.6rem;
+        line-height: 1.1;
+    }
+    @media (max-width: 576px) {
+        font-size: 2rem !important;
+    }
+}
+
+// Hero 1
+.hero-1 {
+    position: relative;
+
+    .slider {
+        position: absolute;
+        width: 320px;
+        height: 240px;
+        z-index: 10;
+        bottom: 1rem;
+        left: -15rem;
+
+        .swiper-initialized {
+            z-index: 100 !important;
+            height: 100%;
+            width: 100%;
+
+            .swiper-slide {
+                .swiper-slide-content {
+                    max-width: 280px;
+                    text-align: left;
+                    padding-top: 2rem;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    .hero-container {
+        position: relative;
+
+        .hero-img {
+            position: relative;
+
+            img {
+                position: relative;
+                z-index: 2;
+            }
+
+            &::before {
+                content: "";
+                background: url('/assets/images/pattern/dot3.svg');
+                width: 6rem;
+                height: 6rem;
+                position: absolute;
+                bottom: 4rem;
+                left: 0rem;
+                z-index: 0;
+            }
+    
+            &::after {
+                content: "";
+                background: url('/assets/images/pattern/dot3.svg');
+                width: 8rem;
+                height: 8rem;
+                position: absolute;
+                top: 0rem;
+                right: 0rem;
+                z-index: 0;
+            }
+        }
+
+        .quote {
+            position: relative;
+
+            &::before {
+                font-size: 6rem;
+                line-height: 0rem;
+                color: rgba($danger, 0.2);
+                z-index: 0;
+                content: "\201D";
+                position: absolute;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 22%;
+        z-index: -2;
+        background: linear-gradient($gray-100 0%, $gray-50 100%);
+    }
+
+    @media (max-width: 768px) {
+        .slider {
+            display: none;
+        }
+
+        .hero-container {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            .action-buttons {
+                justify-content: center !important;
+            }
+        }
+    }
+}
+
+
+// hero-2
+.hero-2 {
+    height: $hero-height;
+
+    @media (max-width: 1024px) {
+        height: $hero-height;
+    }
+
+    @media (min-width:769px) and (max-width: 1024px) {
+        height: 48vh;
+    }
+
+    .slider {
+        position: relative;
+
+        .form-container {
+            position: absolute;
+            top: 0rem;
+            width: 100%;
+            height: auto;
+            z-index: 2;
+            left: 0;
+            right: 0;
+        }
+
+        .navigations {
+            .swiper-custom-prev,
+            .swiper-custom-next {
+                padding: .15rem .3rem;
+                line-height: 1.25;
+                border-radius: 0.15rem;
+            }
+        }
+
+        .slider-item {
+            position: relative;
+            height: 520px;
+            background-size: cover;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-2 {
+        .slider {
+            position: relative;
+    
+            .form-container {
+                position: absolute;
+                top: -1rem;
+                width: 100%;
+                height: auto;
+                z-index: 2;
+                left: 0;
+                right: 0;
+            }
+    
+            .navigations {
+                .swiper-custom-prev,
+                .swiper-custom-next {
+                    padding: .15rem .3rem;
+                    line-height: 1.25;
+                    border-radius: 0.15rem;
+                }
+            }
+    
+            .slider-item {
+                position: relative;
+                height: 240px;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-2 {
+        height: auto;
+        padding: 50px 0 0;
+    }
+}
+
+// moving objects
+.hero-with-shapes {
+    @keyframes rotating {
+        0%{
+            transform: rotate(0deg);
+            top: 10%;
+            left: 5%;
+        }
+        100%{
+            transform: rotate(360deg);
+            top: 60%;
+            left: 15%;
+        }
+    }
+
+    @keyframes rotating2 {
+        0%{
+            transform: rotate(0deg);
+            bottom: 10%;
+            right: 10%;
+        }
+        100%{
+            transform: rotate(360deg);
+            bottom: 80%;
+            right: 30%;
+        }
+    }
+
+    @keyframes rotating3 {
+        0%{
+            transform: rotate(0deg);
+            bottom: 0%;
+            right: 65%;
+        }
+        100%{
+            transform: rotate(360deg);
+            bottom: 50%;
+            right: 35%;
+        }
+    }
+
+    .shape1 {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 7rem;
+        height: 7rem;
+        background: url('/assets/images/shapes/rounded-square2.svg');
+        animation: rotating alternate ease-in-out infinite 6s;
+    }
+
+    .shape2 {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+        width: 7rem;
+        height: 7rem;
+        background: url('/assets/images/shapes/rounded-square2.svg');
+        animation: rotating2 alternate ease-in-out infinite 6s;
+    }
+
+    .shape3 {
+        position: absolute;
+        bottom: 0%;
+        right: 65%;
+        width: 7rem;
+        height: 7rem;
+        background: url('/assets/images/shapes/rounded-square2.svg');
+        animation: rotating3 alternate ease-in-out infinite 6s;
+    }
+}
+
+// hero-3
+.hero-3 {
+    
+    .shape1 {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        width: 7rem;
+        height: 7rem;
+        background: url('/assets/images/shapes/rounded-square.svg');
+    }
+
+    .shape2 {
+        position: absolute;
+        top: 40%;
+        right: 10%;
+        width: 7rem;
+        height: 7rem;
+        background: url('/assets/images/shapes/rounded-square2.svg');
+    }
+
+    .shape3 {
+        position: absolute;
+        top: 5%;
+        right: 50%;
+        width: 7rem;
+        height: 7rem;
+        background: url('/assets/images/shapes/rounded-square2.svg');
+    }
+
+    .img-container {
+        position: relative;
+
+        img {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-3 {
+        .img-container {
+            margin-top: 1rem;
+
+            &::before {
+                left: 0;
+                top: 0;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+
+// hero -5
+.hero-5 {
+    height: 65vh;
+
+    .links-social {
+        position: absolute;
+        top: 10%;
+        right: 0px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-5 {
+        .shape.bottom {
+            bottom: -5px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-5 {
+        height: auto;
+    }
+}
+
+
+// hero-6
+.hero-6 {
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: -12rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -2;
+        background: linear-gradient(rgba($orange, 0.02) 0,rgba($orange, 0.03) 100%);
+        transform: skewY(3deg);
+        transform-origin: top left;
+    }
+
+    .shapes {
+        position: relative;
+        height: 100%;
+
+        .shape1 {
+            position: absolute;
+            bottom: 1%;
+            left: 2%;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+            border: 5px solid rgba($danger, 0.3);
+            background: transparent;
+        }
+
+        .shape2 {
+            position: absolute;
+            top: 50%;
+            right: 20%;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+            border: 5px solid rgba($warning, 0.3);
+            background: transparent;
+        }
+    }
+
+    .video-container {
+        .video-item {
+            padding: 1rem 0 1rem 1rem;
+            position: relative;
+            width: 100%;
+
+            img {
+                position: relative;
+                z-index: 2;
+                border-top-right-radius: 1.5rem;
+                border-bottom-left-radius: 1.5rem;
+            }
+
+            .video-overlay {
+                background: rgba($white, 0.1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 3;
+            }
+
+            &::before {
+                position: absolute;
+                width: calc(100% + -3rem);
+                height: calc(100% + -2rem);
+                top: 2rem;
+                content: "";
+                border: 2px dashed $orange;
+                z-index: 1;
+                left: 0rem;
+                border-bottom-left-radius: 2.15rem;
+                border-top-right-radius: 2.15rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-6 {
+        .hero-sub-title {
+            font-size: 14px !important;
+            text-align: left;
+        }
+
+        .video-container {
+            width: 100%;
+
+            .video-item {
+                width: 100%;
+                padding: 1rem 0 1rem 0rem;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+// hero-7
+.hero-7 {
+    .hero-right {
+        .img-container {
+            position: relative;
+            padding: 0.6rem;
+            z-index: 1;
+            background: $white;
+            box-shadow: $box-shadow-lg;
+            border-radius: $border-radius-lg;
+            min-width: 150%;
+
+            img {
+                max-width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        &::before {
+            content: "";
+            background: url('/assets/images/pattern/dot2.svg');
+            width: 8rem;
+            height: 8rem;
+            position: absolute;
+            bottom: -2.25rem;
+            left: -2.25rem;
+            z-index: 0;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-7 {
+        .hero-right {
+            .img-container {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+// hero-9
+.hero-9 {
+    position: relative;
+
+    .hero-top {
+        position: relative;
+        // background: linear-gradient(rgba($orange, 0.05) 0%, rgba($orange, 0.07) 100%) no-repeat left center;
+        text-align: center;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            background: url('/assets/images/pattern/dot.svg');
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            right: -1rem;
+            bottom: -1rem;
+            transform: rotate(45deg);
+        }
+    }
+
+    .hero-cta {
+        text-align: center;
+        padding: 0;
+        position: absolute;
+        display: block;
+        transform: translate3d(0,-50%,0);
+        left: 1rem;
+        right: 1rem;
+        margin: auto;
+        z-index: 5;
+
+        .btn-cta {
+            width: 18%;
+            text-transform: uppercase;
+            font-weight: $font-weight-semibold;
+            // font-family: $font-family-secondary;
+        }
+    }
+
+    .hero-bottom {
+        position: relative;
+
+        .hero-image {
+            height: 560px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-9 {
+        .hero-cta {    
+            .btn-cta {
+                width: 75%;
+            }
+        }
+
+        .hero-bottom {    
+            .hero-image {
+                height: 260px;
+            }
+        }
+    }
+}
+
+// hero-10
+.hero-10 {    
+    .img-container {
+        position: relative;
+        min-width: 140%;
+        margin-left: -40%;
+
+        img {
+            z-index: 1;
+            position: relative;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .img-container {
+            min-width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+
+// hero-11
+.hero-11 {
+    position: relative;
+
+    &::before {
+        background: linear-gradient($gray-200 0%, $gray-100 100%) no-repeat left center;
+        position: absolute;
+        top: 0;
+        bottom: 40%;
+        left: 0;
+        right: 0;
+        content: '';
+    }
+
+
+    .hero-content {
+        position: relative;
+    }
+
+    .slider-container {
+        position: relative;
+
+        .slider-container-body {
+            position: relative;
+            padding: 0.75rem;
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            background: url('/assets/images/pattern/dot5.svg');
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: -2.5rem;
+            right: 4rem;
+            z-index: 0;
+        }
+    }
+
+    .swiper-slide-content {
+        position: relative;
+
+        .video-overlay {
+            background: rgba($white, 0.1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 10;
+        }
+    }
+}
+
+// hero-12
+.hero-12 {
+    height: 640px;
+
+    .hero-image {
+        position: relative;
+
+        img {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            background: url('/assets/images/pattern/dot3.svg');
+            width: 8rem;
+            height: 8rem;
+            position: absolute;
+            z-index: 0;
+        }
+
+        &::before {
+            bottom: 2rem;
+            @media (max-width: 768px) {
+                top: 6rem;
+            }
+        }
+
+        &::after {
+            top: -2rem;
+            right: 8rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-image {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+// hero-13
+.hero-13 {
+    .hero-right {
+        .slider-container {
+            position: relative;
+    
+            .slider-container-body {
+                position: relative;
+                padding: 0.5rem;
+                z-index: 1;
+            }
+    
+            &::after {
+                content: "";
+                background: url('/assets/images/pattern/dot3.svg');
+                width: 8rem;
+                height: 8rem;
+                position: absolute;
+                top: -3rem;
+                right: 3rem;
+                z-index: 0;
+            }
+        }
+    
+        .swiper-slide-content {
+            position: relative;
+    
+            .video-overlay {
+                background: rgba($white, 0.05);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 10;
+            }
+        }
+
+        .img-container {
+            position: relative;
+            padding: 0.3rem;
+            z-index: 1;
+            background: $white;
+            box-shadow: $box-shadow-lg;
+            border-radius: $border-radius-lg;
+            min-width: 160%;
+        }
+        &::before {
+            content: "";
+            background: url('/assets/images/pattern/dot2.svg');
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            bottom: -2rem;
+            left: -2rem;
+            z-index: 0;
+        }
+
+        &::after {
+            content: "";
+            background: url('/assets/images/pattern/dot5.svg');
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: -2.5rem;
+            right: -6rem;
+            z-index: 0;
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-13 {
+        .hero-right {
+            .img-container {
+                min-width: 100%;
+            }
+            &::after {
+                right: 2rem;
+            }
+        }
+    }
+}

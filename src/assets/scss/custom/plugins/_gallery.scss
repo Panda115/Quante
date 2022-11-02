@@ -1,0 +1,53 @@
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+    width: 18px;
+    height: 18px;
+    background: center center url(/assets/images/shapes/x.svg) no-repeat;
+    top: 12px;
+}
+
+.mfp-arrow {
+    &:before {
+        width: 60px;
+        height: 60px;
+        opacity: .9;
+        background: center center url("/assets/images/shapes/chevron-left.svg") no-repeat;
+    }
+
+    &:before,
+    &:after {
+        border: none;
+    }
+}
+
+.mfp-arrow-left {
+    left: 1rem;
+}
+
+.mfp-arrow-right {
+    right: 1rem;
+
+    &:before {
+        background: center center url("/assets/images/shapes/chevron-right.svg") no-repeat;
+    }
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
